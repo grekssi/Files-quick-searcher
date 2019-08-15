@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace GradeZ
 {
@@ -21,6 +24,7 @@ namespace GradeZ
     public partial class MainWindow : Window
     {
         bool hasBeenClicked = false;
+        private string selectedPath = string.Empty;
 
         public MainWindow()
         {
@@ -56,6 +60,23 @@ namespace GradeZ
             {
                 SpecifiedWord.Text = "";
                 hasBeenClicked = true;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        [DisplayName("Folder"), Browsable(true), ReadOnly(true)]
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            using (var folderBrowser = new FolderBrowserDialog())
+            {
+                folderBrowser.RootFolder = Environment.SpecialFolder.Desktop;
+                folderBrowser.Description = "Select starting folder";
+                folderBrowser.ShowDialog();
+                SelectedFolder.Text = folderBrowser.SelectedPath;
             }
         }
     }
