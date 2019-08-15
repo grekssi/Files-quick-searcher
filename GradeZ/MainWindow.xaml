@@ -1,0 +1,21 @@
+﻿<Window x:Class="GradeZ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GradeZ"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="457.625" Width="812.507" Background="Black">
+    <Grid Margin="0,-1,0.4,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox Name="SpecificWordCheck"  VerticalContentAlignment="Center" FontSize="20" Background="White" Foreground="White" Content="Specific word" Grid.Column="1" Margin="264,11,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" RenderTransformOrigin="0.056,0.293" HorizontalAlignment="Left" Width="144" Height="26"/>
+        <CheckBox Name="ExtensionCheck" VerticalContentAlignment="Center" FontSize="20" Background="White" Foreground="White" Content="Extension (e.g .dll)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Grid.Column="1" Margin="264,50,0,0" Checked="CheckBox_Checked_1" Height="27" RenderTransformOrigin="0.542,0.104"/>
+        <TextBlock Name="SearchedFor" FontSize="40" Foreground="White" Background="Black" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Search for:" VerticalAlignment="Top" Margin="25,17,0,0" Height="60" Width="240"/>
+        <TextBox Name="SpecifiedWord" Grid.ColumnSpan="2" FontSize="40" FontWeight ="Bold" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="67" TextWrapping="Wrap" Text="Type Here" VerticalAlignment="Top" Width="332" Margin="460,9,0,0" TextChanged="TextBox_TextChanged_1"/>
+
+    </Grid>
+</Window>

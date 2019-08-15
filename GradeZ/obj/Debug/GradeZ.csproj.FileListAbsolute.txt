@@ -1,0 +1,15 @@
+C:\Users\bedob\source\repos\GradeZ\GradeZ\bin\Debug\GradeZ.exe.config
+C:\Users\bedob\source\repos\GradeZ\GradeZ\bin\Debug\GradeZ.exe
+C:\Users\bedob\source\repos\GradeZ\GradeZ\bin\Debug\GradeZ.pdb
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.csprojAssemblyReference.cache
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\MainWindow.g.cs
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\App.g.cs
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ_MarkupCompile.cache
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ_MarkupCompile.lref
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\MainWindow.baml
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.g.resources
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.Properties.Resources.resources
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.csproj.GenerateResource.cache
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.csproj.CoreCompileInputs.cache
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.exe
+C:\Users\bedob\source\repos\GradeZ\GradeZ\obj\Debug\GradeZ.pdb
