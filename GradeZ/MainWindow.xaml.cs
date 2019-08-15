@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.Windows.Threading;
+using MessageBox = System.Windows.MessageBox;
 using TextBox = System.Windows.Controls.TextBox;
 
 namespace GradeZ
@@ -37,12 +40,12 @@ namespace GradeZ
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            
+            //specifiedword
         }
 
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
-
+            //extension
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -65,8 +68,24 @@ namespace GradeZ
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (SpecificWordCheck.IsChecked == true)
+            {
+                Output.TextTrimming = TextTrimming.CharacterEllipsis;
+                for (int i = 0; i < 40; i++)
+                {
+                   
+                }
+            }
         }
+        //if (SpecifiedWord.Text == "Type Here")
+                //{
+                //    MessageBox.Show("Please enter valid word");
+                //}
+
+                //if (SelectedFolder.Text == string.Empty)
+                //{
+                //    MessageBox.Show("Please choose a starting folder");
+                //}
 
         [DisplayName("Folder"), Browsable(true), ReadOnly(true)]
         private void Button_Click_1(object sender, RoutedEventArgs e)
