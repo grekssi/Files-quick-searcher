@@ -66,26 +66,24 @@ namespace GradeZ
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (SpecificWordCheck.IsChecked == true)
+            //for (int i = 0; i < 40; i++)
+            //{
+            //    await Task.Delay(100);
+            //    Output.Text += $"Text{i}\n";
+            //}
+            if (SpecifiedWord.Text == "Type Here")
             {
-                Output.TextTrimming = TextTrimming.CharacterEllipsis;
-                for (int i = 0; i < 40; i++)
-                {
-                   
-                }
+                MessageBox.Show("Please enter valid word");
+            }
+
+            if (SelectedFolder.Text == string.Empty)
+            {
+                MessageBox.Show("Please choose a starting folder");
             }
         }
-        //if (SpecifiedWord.Text == "Type Here")
-                //{
-                //    MessageBox.Show("Please enter valid word");
-                //}
 
-                //if (SelectedFolder.Text == string.Empty)
-                //{
-                //    MessageBox.Show("Please choose a starting folder");
-                //}
 
         [DisplayName("Folder"), Browsable(true), ReadOnly(true)]
         private void Button_Click_1(object sender, RoutedEventArgs e)
