@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,7 +28,8 @@ namespace GradeZ
     public partial class MainWindow : Window
     {
         bool hasBeenClicked = false;
-        private string selectedPath = string.Empty;
+        private string _selectedPath = string.Empty;
+        private string target = string.Empty;
 
         public MainWindow()
         {
@@ -64,9 +66,12 @@ namespace GradeZ
                 SpecifiedWord.Text = "";
                 hasBeenClicked = true;
             }
+
+            target = SpecifiedWord.Text;
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        //make async
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //for (int i = 0; i < 40; i++)
             //{
@@ -82,6 +87,18 @@ namespace GradeZ
             {
                 MessageBox.Show("Please choose a starting folder");
             }
+
+            DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
+            Searcher searcher = new Searcher();
+            if (searcher.Iterate(dirInfo, target))
+            {
+                Status.Text = "Found";
+                FoundAt.Text = searcher.GetDirectory();
+            }
+            else
+            {
+                Status.Text = "NotFound";
+            }
         }
 
 
@@ -94,6 +111,7 @@ namespace GradeZ
                 folderBrowser.Description = "Select starting folder";
                 folderBrowser.ShowDialog();
                 SelectedFolder.Text = folderBrowser.SelectedPath;
+                _selectedPath = folderBrowser.SelectedPath;
             }
         }
     }
