@@ -78,7 +78,6 @@ namespace GradeZ
             //    await Task.Delay(100);
             //    Output.Text += $"Text{i}\n";
             //}
-            _progressBar.Value += 50;
             if (SpecifiedWord.Text == "Type Here" || SelectedFolder.Text == string.Empty)
             {
                 MessageBox.Show("Please enter valid File Name or choose a valid folder!");

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace GradeZ
 {
-    public static class Checker
+    interface ISearcher
     {
-
     }
 }

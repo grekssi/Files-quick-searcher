@@ -15,7 +15,6 @@ namespace GradeZ
     {
         private bool isready = false;
         private string foundAt = string.Empty;
-        private int i = 0;
         private int length;
 
         public bool Iterate(DirectoryInfo dir, string targetName)
