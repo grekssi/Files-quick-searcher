@@ -30,7 +30,7 @@ namespace GradeZ
         bool hasBeenClicked = false;
         private string _selectedPath = string.Empty;
         private string target = string.Empty;
-
+        private string foundPath = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
@@ -78,26 +78,24 @@ namespace GradeZ
             //    await Task.Delay(100);
             //    Output.Text += $"Text{i}\n";
             //}
-            if (SpecifiedWord.Text == "Type Here")
+            _progressBar.Value += 50;
+            if (SpecifiedWord.Text == "Type Here" || SelectedFolder.Text == string.Empty)
             {
-                MessageBox.Show("Please enter valid word");
-            }
-
-            if (SelectedFolder.Text == string.Empty)
-            {
-                MessageBox.Show("Please choose a starting folder");
-            }
-
-            DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
-            Searcher searcher = new Searcher();
-            if (searcher.Iterate(dirInfo, target))
-            {
-                Status.Text = "Found";
-                FoundAt.Text = searcher.GetDirectory();
+                MessageBox.Show("Please enter valid File Name or choose a valid folder!");
             }
             else
             {
-                Status.Text = "NotFound";
+                DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
+                Searcher searcher = new Searcher();
+                if (searcher.Iterate(dirInfo, target))
+                {
+                    Status.Text = "Found";
+                    FoundAt.Text = searcher.GetDirectory();
+                }
+                else
+                {
+                    Status.Text = "NotFound";
+                }
             }
         }
 
@@ -113,6 +111,27 @@ namespace GradeZ
                 SelectedFolder.Text = folderBrowser.SelectedPath;
                 _selectedPath = folderBrowser.SelectedPath;
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (FoundAt.Text == string.Empty)
+            {
+                MessageBox.Show("Invalid Operation");
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(FoundAt.Text);
+            }
+        }
+
+        private void FoundAt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
         }
     }
 }

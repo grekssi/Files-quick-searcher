@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeZ", "GradeZ\GradeZ.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestReflection", "..\..\..\source\repos\TestReflection\TestReflection\TestReflection.csproj", "{2B5F519D-F868-4DDA-8EA3-2E60B56624DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8C2ECFFD-E946-4661-95E8-6EDFD8CC4D26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2B5F519D-F868-4DDA-8EA3-2E60B56624DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B5F519D-F868-4DDA-8EA3-2E60B56624DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B5F519D-F868-4DDA-8EA3-2E60B56624DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2ECFFD-E946-4661-95E8-6EDFD8CC4D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2ECFFD-E946-4661-95E8-6EDFD8CC4D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2ECFFD-E946-4661-95E8-6EDFD8CC4D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2ECFFD-E946-4661-95E8-6EDFD8CC4D26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

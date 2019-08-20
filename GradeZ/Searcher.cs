@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
 namespace GradeZ
@@ -13,15 +15,20 @@ namespace GradeZ
     {
         private bool isready = false;
         private string foundAt = string.Empty;
+        private int i = 0;
+        private int length;
 
         public bool Iterate(DirectoryInfo dir, string targetName)
         {
             if (isready == true)
             {
-                isready = false;
+                return true;
             }
-            foreach (var folder in dir.GetDirectories())
+
+            var directories = dir.GetDirectories();
+            foreach (var folder in directories.Where(x => (x.Attributes & FileAttributes.Hidden) == 0))
             {
+                length = dir.GetDirectories().Length;
                 if (isready == true)
                 {
                     return true;
