@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
-namespace GradeZ
+namespace GradeZ.Searchers
 {
-    interface ISearcher
+    public interface ISearcher
     {
+        bool IsReady { get; }
+        string FoundAt { get; }
+        bool Iterate(DirectoryInfo dir, string targetName);
     }
 }

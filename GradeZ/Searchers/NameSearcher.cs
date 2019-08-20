@@ -9,17 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
-namespace GradeZ
+namespace GradeZ.Searchers
 {
-    public class Searcher
+    public class NameSearcher : ISearcher
     {
-        private bool isready = false;
-        private string foundAt = string.Empty;
-        private int length;
+        public bool IsReady { get; private set; }
+        public string FoundAt { get; private set; }
 
         public bool Iterate(DirectoryInfo dir, string targetName)
         {
-            if (isready == true)
+            if (IsReady == true)
             {
                 return true;
             }
@@ -27,8 +26,7 @@ namespace GradeZ
             var directories = dir.GetDirectories();
             foreach (var folder in directories.Where(x => (x.Attributes & FileAttributes.Hidden) == 0))
             {
-                length = dir.GetDirectories().Length;
-                if (isready == true)
+                if (IsReady == true)
                 {
                     return true;
                 }
@@ -37,13 +35,13 @@ namespace GradeZ
                 {
                     if (Path.GetFileNameWithoutExtension(fileInfo.Name) == targetName)
                     {
-                        foundAt = folder.FullName;
-                        isready = true;
+                        FoundAt = folder.FullName;
+                        IsReady = true;
                         return true;
                     }
                 }
 
-                if (isready == true)
+                if (IsReady == true)
                 {
                     return true;
                 }
@@ -51,14 +49,14 @@ namespace GradeZ
                 if (folder.GetDirectories() != null)
                 {
                     Iterate(new DirectoryInfo(folder.FullName), targetName);
-                    if (isready == true)
+                    if (IsReady == true)
                     {
                         return true;
                     }
                 }
             }
 
-            if (isready == true)
+            if (IsReady == true)
             {
                 return true;
             }
@@ -71,7 +69,7 @@ namespace GradeZ
 
         public string GetDirectory()
         {
-            return this.foundAt;
+            return this.FoundAt;
         }
     }
 }

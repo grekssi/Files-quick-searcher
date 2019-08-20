@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GradeZ
+namespace GradeZ.Searchers
 {
-    class NameSearcher
+    public class ExtensionSearcher
     {
     }
 }
