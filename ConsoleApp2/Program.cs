@@ -6,42 +6,43 @@ using System.Threading.Tasks;
 
 class Program
 {
-    private static Stack<int> first;
-    private static Stack<int> second = new Stack<int>();
-    private static Stack<int> third = new Stack<int>();
+    private static Stack<int> source;
+    private static Stack<int> destination = new Stack<int>();
+    private static Stack<int> spare = new Stack<int>();
     private static int stepsTaken = 0;
 
     static void Main(string[] args)
     {
         int numberOfDisks = int.Parse(Console.ReadLine());
-        first = new Stack<int>(Enumerable.Range(1, numberOfDisks).Reverse());
+        source = new Stack<int>(Enumerable.Range(1, numberOfDisks).Reverse());
         PrintRods();
-        MoveDisks(numberOfDisks, first, second, third);
+        MoveDisks(numberOfDisks, source, destination, spare);
     }
 
-    private static void MoveDisks(int bottomDisk,
-        Stack<int> first, 
-        Stack<int> second,
-        Stack<int> third)
+    private static void MoveDisks(int disk,
+        Stack<int> source, 
+        Stack<int> destination,
+        Stack<int> spare)
     {
-        if(bottomDisk == 1)
+        if(disk == 1)
         {
-            stepsTaken++;
-            second.Push(first.Pop());
+            destination.Push(source.Pop());
+            PrintRods();
         }
         else
         {
-            MoveDisks(bottomDisk - 1, first, third, second);
-            second.Push(first.Pop());
-            MoveDisks(bottomDisk - 1, third, second, first);
+            MoveDisks(disk - 1, source, spare, destination);
+            destination.Push(source.Pop());
+            PrintRods();
+            MoveDisks(disk - 1, spare, destination, source);
         }
     }
 
     private static void PrintRods()
     {
-        Console.WriteLine($"Source: {String.Join(", ", first.Reverse())}");
-        Console.WriteLine($"Destination: {String.Join(", ", second.Reverse())}");
-        Console.WriteLine($"Spare: {String.Join(", ", third.Reverse())}");
+        Console.WriteLine($"Source: {String.Join(", ", source.Reverse())}");
+        Console.WriteLine($"Destination: {String.Join(", ", destination.Reverse())}");
+        Console.WriteLine($"Spare: {String.Join(", ", spare.Reverse())}");
         Console.WriteLine();
     }
 }
