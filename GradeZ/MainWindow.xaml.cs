@@ -17,9 +17,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Windows.Threading;
+using GradeZ.Searchers;
 using MessageBox = System.Windows.MessageBox;
 using TextBox = System.Windows.Controls.TextBox;
-
+using UserControl = System.Windows.Controls.UserControl;
 namespace GradeZ
 {
     /// <summary>
@@ -27,6 +28,7 @@ namespace GradeZ
     /// </summary>
     public partial class MainWindow : Window
     {
+
         bool hasBeenClicked = false;
         private string _selectedPath = string.Empty;
         private string target = string.Empty;
@@ -34,20 +36,18 @@ namespace GradeZ
         public MainWindow()
         {
             InitializeComponent();
-            if (SpecificWordCheck.IsChecked == true)
-            {
-                
-            }
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            //specifiedword
+            this.SpecifiedWord.Visibility = Visibility.Visible;
+            this.FolderSearch.Visibility = Visibility.Visible;
         }
 
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
-            //extension
+            this.SpecifiedWord.Visibility = Visibility.Visible;
+            this.FolderSearch.Visibility = Visibility.Visible;
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -61,6 +61,7 @@ namespace GradeZ
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
+
             if (SpecifiedWord.IsFocused && hasBeenClicked == false)
             {
                 SpecifiedWord.Text = "";
@@ -85,14 +86,22 @@ namespace GradeZ
             else
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
-                Searcher searcher = new Searcher();
+                NameSearcher searcher = new NameSearcher();
                 if (searcher.Iterate(dirInfo, target))
                 {
+                    Status.Visibility = Visibility.Visible;
                     Status.Text = "Found";
+                    FoundAtText.Visibility = Visibility.Visible;
+                    foundAt.Visibility = Visibility.Visible;
+                    FoundAt.Visibility = Visibility.Visible;
                     FoundAt.Text = searcher.GetDirectory();
+                    OpenFolder.Visibility = Visibility.Visible;
+                    EditFile.Visibility = Visibility.Visible;
+
                 }
                 else
                 {
+                    Status.Visibility = Visibility.Visible;
                     Status.Text = "NotFound";
                 }
             }
@@ -107,12 +116,17 @@ namespace GradeZ
                 folderBrowser.RootFolder = Environment.SpecialFolder.Desktop;
                 folderBrowser.Description = "Select starting folder";
                 folderBrowser.ShowDialog();
+                SelectedFolder.Visibility = Visibility.Visible;
                 SelectedFolder.Text = folderBrowser.SelectedPath;
                 _selectedPath = folderBrowser.SelectedPath;
+                if (_selectedPath != string.Empty && SpecifiedWord.Text != "Type Here" && SelectedFolder.Text != string.Empty)
+                {
+                    Search.Visibility = Visibility.Visible;
+                }
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e) //open folder
         {
             if (FoundAt.Text == string.Empty)
             {
@@ -129,8 +143,10 @@ namespace GradeZ
 
         }
 
-        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Button_Click_3(object sender, RoutedEventArgs e) //editFile
         {
+            var contentToDisplay = new FoundFile();
+            this.Content = contentToDisplay.Content;
         }
     }
 }

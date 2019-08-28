@@ -1,0 +1,16 @@
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\bin\Release\GradeZ.exe
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\bin\Release\GradeZ.pdb
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.csprojAssemblyReference.cache
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\FoundFile.baml
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\FoundFile.g.cs
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\MainWindow.g.cs
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\App.g.cs
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ_MarkupCompile.cache
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ_MarkupCompile.lref
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\MainWindow.baml
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.g.resources
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.Properties.Resources.resources
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.csproj.GenerateResource.cache
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.csproj.CoreCompileInputs.cache
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.exe
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Release\GradeZ.pdb
