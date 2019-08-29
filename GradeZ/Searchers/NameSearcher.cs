@@ -15,6 +15,7 @@ namespace GradeZ.Searchers
     {
         public bool IsReady { get; private set; }
         public string FoundAt { get; private set; }
+        public FileInfo File { get; private set; }
 
         public bool Iterate(DirectoryInfo dir, string targetName)
         {
@@ -35,6 +36,7 @@ namespace GradeZ.Searchers
                 {
                     if (Path.GetFileNameWithoutExtension(fileInfo.Name) == targetName)
                     {
+                        this.File = fileInfo;
                         FoundAt = folder.FullName;
                         IsReady = true;
                         return true;

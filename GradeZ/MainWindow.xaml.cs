@@ -28,7 +28,8 @@ namespace GradeZ
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        static ISearcher searcher = new NameSearcher();
+        static ISearcher foldercher = new FolderSearcher();
         bool hasBeenClicked = false;
         private string _selectedPath = string.Empty;
         private string target = string.Empty;
@@ -40,15 +41,26 @@ namespace GradeZ
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
+            searcher = new NameSearcher();
             this.SpecifiedWord.Visibility = Visibility.Visible;
             this.FolderSearch.Visibility = Visibility.Visible;
         }
 
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
+            searcher = new ExtensionSearcher();
             this.SpecifiedWord.Visibility = Visibility.Visible;
             this.FolderSearch.Visibility = Visibility.Visible;
         }
+
+        private void FolderSearch_OnChecked(object sender, RoutedEventArgs e)
+        {
+            searcher = new FolderSearcher();
+            this.SpecifiedWord.Visibility = Visibility.Visible;
+            this.FolderSearch.Visibility = Visibility.Visible;
+        }
+
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!hasBeenClicked)
@@ -86,7 +98,7 @@ namespace GradeZ
             else
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
-                NameSearcher searcher = new NameSearcher();
+                
                 if (searcher.Iterate(dirInfo, target))
                 {
                     Status.Visibility = Visibility.Visible;
@@ -97,7 +109,6 @@ namespace GradeZ
                     FoundAt.Text = searcher.GetDirectory();
                     OpenFolder.Visibility = Visibility.Visible;
                     EditFile.Visibility = Visibility.Visible;
-
                 }
                 else
                 {
@@ -145,8 +156,10 @@ namespace GradeZ
 
         private void Button_Click_3(object sender, RoutedEventArgs e) //editFile
         {
-            var contentToDisplay = new FoundFile();
+            var contentToDisplay = new FoundFile(searcher.File);
             this.Content = contentToDisplay.Content;
         }
+
+        
     }
 }

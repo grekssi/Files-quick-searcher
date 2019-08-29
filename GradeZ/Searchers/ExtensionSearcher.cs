@@ -15,5 +15,10 @@ namespace GradeZ.Searchers
         {
             throw new NotImplementedException();
         }
+
+        public string GetDirectory()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

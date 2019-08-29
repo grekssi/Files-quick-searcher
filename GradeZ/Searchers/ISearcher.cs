@@ -7,5 +7,6 @@ namespace GradeZ.Searchers
         bool IsReady { get; }
         string FoundAt { get; }
         bool Iterate(DirectoryInfo dir, string targetName);
+        string GetDirectory();
     }
 }

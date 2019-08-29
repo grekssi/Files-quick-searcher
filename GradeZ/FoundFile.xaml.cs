@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,9 +21,14 @@ namespace GradeZ
     /// </summary>
     public partial class FoundFile : Window
     {
-        public FoundFile()
+        public FoundFile(FileInfo file)
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
