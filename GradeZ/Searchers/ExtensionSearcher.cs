@@ -20,5 +20,7 @@ namespace GradeZ.Searchers
         {
             throw new NotImplementedException();
         }
+
+        public FileInfo File { get; }
     }
 }

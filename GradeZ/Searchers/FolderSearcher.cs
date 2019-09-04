@@ -63,5 +63,7 @@ namespace GradeZ.Searchers
         {
             return this.FoundAt;
         }
+
+        public FileInfo File { get; }
     }
 }

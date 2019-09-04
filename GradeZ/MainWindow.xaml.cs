@@ -1,26 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Windows.Threading;
 using GradeZ.Searchers;
 using MessageBox = System.Windows.MessageBox;
-using TextBox = System.Windows.Controls.TextBox;
-using UserControl = System.Windows.Controls.UserControl;
 namespace GradeZ
 {
     /// <summary>
@@ -28,47 +15,44 @@ namespace GradeZ
     /// </summary>
     public partial class MainWindow : Window
     {
-        static ISearcher searcher = new NameSearcher();
-        static ISearcher foldercher = new FolderSearcher();
+        private static ISearcher searcher;
         bool hasBeenClicked = false;
         private string _selectedPath = string.Empty;
         private string target = string.Empty;
         private string foundPath = string.Empty;
+        private Thread T;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public string GetPath()
+        {
+            return this.FoundAt.Text;
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             searcher = new NameSearcher();
             this.SpecifiedWord.Visibility = Visibility.Visible;
-            this.FolderSearch.Visibility = Visibility.Visible;
+            this.FolderSearcher.Visibility = Visibility.Visible;
+            this.Search.Visibility = Visibility.Visible;
         }
 
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
             searcher = new ExtensionSearcher();
             this.SpecifiedWord.Visibility = Visibility.Visible;
-            this.FolderSearch.Visibility = Visibility.Visible;
+            this.FolderSearcher.Visibility = Visibility.Visible;
+            this.Search.Visibility = Visibility.Visible;
         }
 
         private void FolderSearch_OnChecked(object sender, RoutedEventArgs e)
         {
             searcher = new FolderSearcher();
             this.SpecifiedWord.Visibility = Visibility.Visible;
-            this.FolderSearch.Visibility = Visibility.Visible;
-        }
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!hasBeenClicked)
-            {
-                TextBox box = sender as TextBox;
-                box.Text = String.Empty;
-                hasBeenClicked = true;
-            }
+            this.FolderSearcher.Visibility = Visibility.Visible;
+            this.Search.Visibility = Visibility.Visible;
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
@@ -98,8 +82,9 @@ namespace GradeZ
             else
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
-                
-                if (searcher.Iterate(dirInfo, target))
+                T = new Thread(x => searcher.Iterate(dirInfo, target), 200);
+                T.Start();
+                if (searcher.IsReady)
                 {
                     Status.Visibility = Visibility.Visible;
                     Status.Text = "Found";
@@ -145,7 +130,7 @@ namespace GradeZ
             }
             else
             {
-                System.Diagnostics.Process.Start(FoundAt.Text);
+                System.Diagnostics.Process.Start(FoundAt.Text); //HERERERERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
             }
         }
 
@@ -156,10 +141,8 @@ namespace GradeZ
 
         private void Button_Click_3(object sender, RoutedEventArgs e) //editFile
         {
-            var contentToDisplay = new FoundFile(searcher.File);
-            this.Content = contentToDisplay.Content;
+           MainFrame.Navigate(new Uri("FoundFilePage.xaml",UriKind.RelativeOrAbsolute));
         }
 
-        
     }
 }

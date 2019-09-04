@@ -56,14 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FoundFile.xaml.cs">
-      <DependentUpon>FoundFile.xaml</DependentUpon>
+    <Compile Include="FoundFilePage.xaml.cs">
+      <DependentUpon>FoundFilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Searchers\FolderSearcher.cs" />
     <Compile Include="Searchers\ISearcher.cs" />
     <Compile Include="Searchers\ExtensionSearcher.cs" />
     <Compile Include="Searchers\NameSearcher.cs" />
-    <Page Include="FoundFile.xaml">
+    <Page Include="FoundFilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

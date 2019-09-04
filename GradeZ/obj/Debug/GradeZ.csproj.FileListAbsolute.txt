@@ -27,8 +27,6 @@ C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\Grade
 C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.csproj.CoreCompileInputs.cache
 C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.exe
 C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.pdb
-C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FoundFile.g.cs
-C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FoundFile.baml
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\bin\Debug\GradeZ.exe
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\bin\Debug\GradeZ.pdb
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.csprojAssemblyReference.cache
@@ -45,3 +43,5 @@ C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.csproj.
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.csproj.CoreCompileInputs.cache
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.exe
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.pdb
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FoundFilePage.g.cs
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FoundFilePage.baml
