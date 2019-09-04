@@ -45,3 +45,7 @@ C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.exe
 C:\Users\bedob\Desktop\File-Search-Algorithm-WPF\GradeZ\obj\Debug\GradeZ.pdb
 C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FoundFilePage.g.cs
 C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FoundFilePage.baml
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FileRemoverPage.g.cs
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FileSearcherPage.g.cs
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FileRemoverPage.baml
+C:\Users\bedob\Documents\GitHub\File-Search-Algorithm-WPF\GradeZ\obj\Debug\FileSearcherPage.baml
