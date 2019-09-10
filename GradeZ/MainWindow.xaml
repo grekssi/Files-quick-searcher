@@ -5,16 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeZ"
         mc:Ignorable="d"
-        Title="MainWindow" Height="457.625" Width="812.507" Background="Crimson">
+        Title="MainWindow" Height="450.425" Width="812.507" Background="LightYellow">
     <Grid Margin="0,-1,0.4,1">
-        <Button Content="File Eraser" HorizontalAlignment="Left" Margin="501,138,0,0" VerticalAlignment="Top" Width="213" Height="111"/>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" Margin="-2,-22,-1,-11"/>
-        <Button Margin="124,139,478,0" VerticalAlignment="Top" Width="204" Height="107" Click="Button_Click">
-            <Border CornerRadius="5" Height="25" Width="95" Margin="0" BorderBrush="Black" BorderThickness="4,4,4,4" >
-                <TextBlock Text="Click on Me" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Border>
+        <TextBlock FontSize="15" Margin="0,0,-16,-9.2"  HorizontalAlignment="Right" Width="232" Height="76" VerticalAlignment="Bottom"><Run Text="Created By 'Bedros Garabedyan' "/><LineBreak/><Run Text="Open-Source project @github"/><LineBreak/><Run Text=" "/><Run Text="&#x9; "/><Run Text=" "/><Hyperlink Foreground="Black" NavigateUri="https://github.com/grekssi/GradeZ-File-Editor" RequestNavigate="Hyperlink_OnRequestNavigate"><Run Text="Link"/></Hyperlink></TextBlock>
+        <Button x:Name="btn" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Margin="0,0,253,167.8" Click="FileSearchButton" HorizontalAlignment="Right" Width="302" Height="149" VerticalAlignment="Bottom">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Content>
+                <Border CornerRadius="5" Margin="3,13,3.4,16.8" BorderBrush="Black" BorderThickness="5,6,5,6" >
+                    <TextBlock FontSize="50" FontWeight="UltraLight" Text="File Searcher" Margin="9,19,-5,20.4"/>
+                </Border>
+            </Button.Content>
         </Button>
-
+        <Button x:Name="btn2" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" Margin="0,241,252,31.8" Click="FileRemoveButton" HorizontalAlignment="Right" Width="312">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Content>
+                <Border CornerRadius="5" Margin="10,10,5,0" BorderBrush="Black" BorderThickness="5,6,5,6" Height="127" VerticalAlignment="Top" >
+                    <TextBlock FontSize="50" FontWeight="UltraLight" Margin="36,22,26.8,24.2"><Run Text="File Eraser"/><LineBreak/><Run/></TextBlock>
+                </Border>
+            </Button.Content>
+        </Button>
+        <Label Foreground="Black" FontSize="85" Content="GradeZ" FontWeight="Medium" FontStyle="Italic" Margin="253,-29,0,334.8" HorizontalAlignment="Left" Width="306"/>
+        <Label Foreground="Black" FontSize="20" Content="File Worker" FontWeight="Medium" FontStyle="Italic" Margin="339,65,207,0" VerticalAlignment="Top" Height="39"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" Margin="-1,-22,-2,-1.2"/>
     </Grid>
 
 </Window>

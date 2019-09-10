@@ -115,7 +115,6 @@ namespace GradeZ
         }
 
 
-        [DisplayName("Folder"), Browsable(true), ReadOnly(true)]
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             using (var folderBrowser = new FolderBrowserDialog())

@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Navigation;
 using System.Windows.Threading;
 using GradeZ.Searchers;
 using MessageBox = System.Windows.MessageBox;
@@ -20,9 +21,19 @@ namespace GradeZ
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Hyperlink_OnRequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/grekssi/GradeZ-File-Editor");
+        }
+
+        private void FileSearchButton(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Uri("FileSearcherPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void FileRemoveButton(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Uri("FileRemoverPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
