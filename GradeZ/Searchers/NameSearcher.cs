@@ -19,18 +19,9 @@ namespace GradeZ.Searchers
         public FileInfo File { get; private set; }
         public bool Iterate(DirectoryInfo dir, string targetName)
         {
-            if (IsReady == true)
-            {
-                return true;
-            }
-
             var directories = dir.GetDirectories();
             foreach (var folder in directories.Where(x => (x.Attributes & FileAttributes.Hidden) == 0))
             {
-                if (IsReady == true)
-                {
-                    return true;
-                }
                 var files = folder.GetFiles();
                 foreach (var fileInfo in files)
                 {
