@@ -79,7 +79,7 @@ namespace GradeZ
         }
 
         //make async
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             //for (int i = 0; i < 40; i++)
             //{
@@ -93,8 +93,7 @@ namespace GradeZ
             else
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(_selectedPath);
-                T = new Thread(x => searcher.Iterate(dirInfo, target), 200);
-                T.Start();
+                await Task.Run(() => searcher.Iterate(dirInfo, target));
                 if (searcher.Iterate(dirInfo, target))
                 {
                     Status.Visibility = Visibility.Visible;
